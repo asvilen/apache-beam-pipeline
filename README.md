@@ -36,8 +36,10 @@ The project consists of the following files:
 Our ETL pipeline follows a simple plot:
 
 1. **Extract**: We source our data from an XLSX file, utilizing pandas' data-handling superpowers.
+2. 
+![image](https://github.com/asvilen/apache-beam-pipeline/assets/47661156/47a463ab-f230-46d6-8e2c-5acc3620ebee)
 
-2. **Transform**: Once the data is extracted, it undergoes a transformation journey, where it is carefully refined and prepared for its new home in the PostgreSQL database. The transformations applied to the data are designed to ensure consistency, cleanliness, and usefulness. Here's what happens:
+3. **Transform**: Once the data is extracted, it undergoes a transformation journey, where it is carefully refined and prepared for its new home in the PostgreSQL database. The transformations applied to the data are designed to ensure consistency, cleanliness, and usefulness. Here's what happens:
 
    - **Date Formatting**: The 'date' column is formatted as a string in the desired format, using the `pd.to_datetime` function. This ensures that the date data is uniform and suitable for further analysis.
 
@@ -47,47 +49,20 @@ Our ETL pipeline follows a simple plot:
 
    - **Partner ID Assignment**: A unique partner ID is assigned based on the partner key. If a partner key is encountered for the first time, a new partner ID is generated and associated with that partner. This step ensures that each partner has a unique identifier for reference in the database.
 
-3. **Load**: We usher the transformed data into a PostgreSQL database, following your configuration settings in `db_config.py`.
+4. **Load**: We usher the transformed data into a PostgreSQL database, following your configuration settings in `db_config.py`.
 
 ## Table Structure
 
-   The transformed data is structured into a table with the following columns:
+   The transformed data is structured into a table with the following columns as primary keys:
 
-   - `date_key`: An integer representing the date in the format YYYYMMDD, used as a primary key for time-based queries.
+   - `date_key`: An integer representing the date in the format YYYYMMDD, allowing you to retrieve data for specific dates or date ranges efficiently.
 
-   - `partner_id`: A unique identifier for each partner, assigned based on the partner's name and country. This is used as the primary key for partner-related queries.
-
-   - `partner`: The name of the partner.
-
-   - `partner_type`: The type of partner.
-
-   - `country`: The normalized country name, ensuring consistency.
-
-   - `unique_clicks`: The number of unique clicks associated with the partner.
-
-   - `new_registrations`: The count of new registrations attributed to the partner.
-
-   - `first_time_depositing`: The number of first-time depositing users.
-
-   - `cpa_triggered`: The count of Cost Per Action (CPA) triggers.
-
-   - `cpa_earnings_eur`: Earnings in Euros from CPA activities.
-
-   - `rev_share_earnings_eur`: Earnings in Euros from revenue sharing.
-
-   - `amount_deposited_eur`: The total amount deposited in Euros.
-
-   - `net_revenue_eur`: Net revenue in Euros.
-
-The resulting table has two primary keys:
-
-- `date_key`: This primary key enables time-based queries and allows you to retrieve data for specific dates or date ranges efficiently.
-
-- `partner_id`: This primary key facilitates partner-specific analysis, ensuring that each partner's data is uniquely identified and accessible.
+   - `partner_id`: A unique identifier for each partner, assigned based on the partner's name and country. This primary key facilitates partner-specific analysis, ensuring that each partner's data is uniquely identified and accessible.
 
 These primary keys are vital for database performance and data retrieval, enabling precise and efficient querying of the transformed data.
 
-The transformation process ensures that the data is not only clean and consistent but also structured in a way that supports meaningful analysis and insights.
+![image](https://github.com/asvilen/apache-beam-pipeline/assets/47661156/abd8ddde-f789-4098-ad9d-26e27d939a31)
+
 
 
 ## Configuration

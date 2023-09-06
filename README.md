@@ -53,7 +53,7 @@ Our ETL pipeline follows a simple plot:
 
    - **Partner ID Assignment**: A unique partner ID is assigned based on the partner key. If a partner key is encountered for the first time, a new partner ID is generated and associated with that partner. This step ensures that each partner has a unique identifier for reference in the database.
 
-3. **Load**: We usher the transformed data into a PostgreSQL database, following your configuration settings in `db_config.py`.
+3. **Load**: We usher the transformed data into a PostgreSQL database, following the configuration settings in `db_config.py`.
 
 ## Table Structure
 

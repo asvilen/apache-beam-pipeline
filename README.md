@@ -1,4 +1,4 @@
-# ETL Pipeline for using Apache Beam
+# ETL Pipeline using Apache Beam
 
 ## Overview
 
@@ -8,10 +8,9 @@ This ETL (Extract, Transform, Load) pipeline is designed to process partner data
 
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
-- [Usage](#usage)
+- [How It Works](#how-it-works)
 - [Configuration](#configuration)
 - [Instructions](#instructions)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Prerequisites
@@ -62,3 +61,6 @@ To run the ETL pipeline:
    ```sh
    python main.py
    ```
+## License
+
+This project is released under the [MIT License](LICENSE). See the LICENSE file for more details.

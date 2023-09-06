@@ -31,13 +31,19 @@ The project consists of the following files:
 - `db_config.py`: Configuration file for defining the database table structure.
 - `main.py`: The main script for running the ETL pipeline.
 
-## Usage
+## How It Works
 
-To use this ETL pipeline, follow the instructions below:
+Our ETL pipeline follows a simple plot:
+
+1. **Extract**: We source our data from an XLSX file, utilizing pandas' data-handling superpowers.
+
+2. **Transform**: Using Apache Beam, we perform data transformations, clean text columns, and create a transformed dataset ready for action.
+
+3. **Load**: We usher the transformed data into a PostgreSQL database, following your configuration settings in `db_config.py`.
 
 ## Configuration
 
-Before running the pipeline, make sure to configure your database connection settings in `db_config.py`. You can define the table structure and database connection parameters.
+To set the stage for your data adventure, make sure to configure your database connection settings in `db_config.py`. You can define the table structure and database connection parameters here.
 
 ## Instructions
 
@@ -47,13 +53,12 @@ To run the ETL pipeline:
 
 2. Set the `POSTGRESQL_PASSWORD` environment variable with your PostgreSQL database password.
 
-3. Save the script to a file (e.g., `etl_pipeline.py`).
+3. Replace `'partners_data.xlsx'` in `main.py` with the path to your XLSX file containing partner data.
 
-4. Replace `'partners_data.xlsx'` in `main.py` with the path to your XLSX file containing partner data.
+4. Replace the database connection options in `db_config.py` with your PostgreSQL database details.
 
-5. Replace the database connection options in `db_config.py` with your PostgreSQL database details.
-
-6. Run the pipeline with the following command:
+5. Run the pipeline with the following command:
 
    ```sh
-   python etl_pipeline.py
+   python main.py
+   ```

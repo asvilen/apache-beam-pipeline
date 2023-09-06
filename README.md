@@ -2,7 +2,7 @@
 
 ## Overview
 
-This ETL (Extract, Transform, Load) pipeline is designed to process partner data, perform necessary data transformations, and load it into a PostgreSQL database. It uses Apache Beam and pandas to handle data extraction, transformation, and loading tasks efficiently.
+This ETL (Extract, Transform, Load) pipeline is designed to process data, perform necessary data transformations, and load it into a PostgreSQL database. It uses Apache Beam and pandas to handle data extraction, transformation, and loading tasks efficiently.
 
 ## Table of Contents
 
@@ -52,7 +52,7 @@ To run the ETL pipeline:
 
 2. Set the `POSTGRESQL_PASSWORD` environment variable with your PostgreSQL database password.
 
-3. Replace `'partners_data.xlsx'` in `main.py` with the path to your XLSX file containing partner data.
+3. Replace `'partners_data.xlsx'` in `main.py` with the path to your XLSX file.
 
 4. Replace the database connection options in `db_config.py` with your PostgreSQL database details.
 

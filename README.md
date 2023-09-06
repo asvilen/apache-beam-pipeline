@@ -42,6 +42,10 @@ Our ETL pipeline follows a simple plot:
 2. **Transform**: Once the data is extracted, it undergoes a transformation journey, where it is carefully refined and prepared for its new home in the PostgreSQL database. The transformations applied to the data are designed to ensure consistency, cleanliness, and usefulness. Here's what happens:
 
    - **Date Formatting**: The 'date' column is formatted as a string in the desired format, using the `pd.to_datetime` function. This ensures that the date data is uniform and suitable for further analysis.
+  
+   - **Text Column Cleaning**: Text columns are subjected to a cleaning process where leading and trailing whitespace is removed. This ensures that text data is free from any unintended spaces or formatting inconsistencies.
+  
+   - **Missing Value Filtering**: Rows containing missing values are identified and removed from the dataset. This ensures that the dataset is free from incomplete or unreliable data.
 
    - **Country Normalization**: The 'country' column is normalized using the `country_alpha2_to_country_name` function from the `pycountry_convert` library. This transformation ensures that country names are consistent and standardized. If a country code is not recognized, it's labeled as 'Other' to maintain data integrity.
 

@@ -9,7 +9,7 @@ This ETL (Extract, Transform, Load) pipeline is designed to process data, perfor
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
-- [Resulting Table Structure](#resulting-table-structure)
+- [Table Structure](#table-structure)
 - [Configuration](#configuration)
 - [Instructions](#instructions)
 - [License](#license)
@@ -49,7 +49,7 @@ Our ETL pipeline follows a simple plot:
 
 3. **Load**: We usher the transformed data into a PostgreSQL database, following your configuration settings in `db_config.py`.
 
-## Resulting Table Structure
+## Table Structure
 
    The transformed data is structured into a table with the following columns:
 

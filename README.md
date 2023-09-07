@@ -57,13 +57,9 @@ Our ETL pipeline follows a simple plot:
 
 ## Table Structure
 
-   The transformed data is structured into a table with the following columns as primary keys:
-
-   - `date_key`: An integer representing the date in the format YYYYMMDD, allowing you to retrieve data for specific dates or date ranges efficiently.
+   The transformed data is structured into a table with the following column as primary key:
 
    - `partner_id`: A unique identifier for each partner, assigned based on the partner's name and country. This primary key facilitates partner-specific analysis, ensuring that each partner's data is uniquely identified and accessible.
-
-These primary keys are vital for database performance and data retrieval, enabling precise and efficient querying of the transformed data.
 
 ![image](https://github.com/asvilen/apache-beam-pipeline/assets/47661156/abd8ddde-f789-4098-ad9d-26e27d939a31)
 

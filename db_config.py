@@ -8,7 +8,7 @@ def table_setup(metadata):
     return Table(
         'interview_table', metadata,
         Column('partner_id', INT, primary_key=True),
-        Column('date_key', INT),
+        Column('date_key', INT, primary_key=True),
         Column('partner', VARCHAR(50)),
         Column('partner_type', VARCHAR(50)),
         Column('country', VARCHAR(50)),

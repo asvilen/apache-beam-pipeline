@@ -81,7 +81,7 @@ To run the ETL pipeline:
 
 4. Replace the database connection options in `db_config.py` with your PostgreSQL database details.
 
-5. Run the main.py file.
+5. Run the `main.py` file.
 
 ## License
 

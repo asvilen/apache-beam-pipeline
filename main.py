@@ -34,12 +34,3 @@ def run_pipeline():
 
 if __name__ == "__main__":
     run_pipeline()
-
-# Instructions for running the pipeline:
-# 1. Ensure Apache Beam, pandas, and psycopg2 are installed.
-# 2. Set the DB_PASSWORD environment variable with your database password.
-# 3. Save the script to a file (e.g., etl_pipeline.py).
-# 4. Replace 'your_sample_data.xlsx' with the path to your XLSX file.
-# 5. Replace the other database connection options with your PostgreSQL database details.
-# 6. Run the pipeline with the following command:
-#    python etl_pipeline.py
